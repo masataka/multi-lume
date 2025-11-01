@@ -1,0 +1,23 @@
+{
+  "tasks": {
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
+    // SITE_NO環境変数にビルドターゲットの識別を積む    
+    "build1": "SITE_NO=1 deno task lume",
+    "build2": "SITE_NO=2 deno task lume",
+    "build3": "SITE_NO=3 deno task lume",
+    // すべてをビルドする
+    "build": "SITE_NO= deno task lume"
+  },
+  "imports": {
+    "lume/": "https://deno.land/x/lume@v3.0.6/",
+    "lume/jsx-runtime": "https://deno.land/x/ssx@v0.1.12/jsx-runtime.ts"
+  },
+  "lock": false,
+  "compilerOptions": {
+    "types": [
+      "lume/types.ts"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "lume"
+  }
+}
