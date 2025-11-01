@@ -5,7 +5,10 @@ import jsx from "lume/plugins/jsx.ts";
 const SITE_NO = Deno.env.get("SITE_NO");
 
 const site = lume({
-  src: "src"
+  src: "src",
+
+  // destをすべてクリーンアップすることを抑制することができるようになった
+  emptyDest: false,
 
   // includesでsrc指定フォルダの上のパスを相対パス指定しても登れなかった
   // src指定を切り替える場合はテンプレート群を複製してそれぞれのsrc指定の下に配置せざるを得ない
